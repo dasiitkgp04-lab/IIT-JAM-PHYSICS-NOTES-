@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>JAM Notes for Juniors</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h1 {
+      text-align: center;
+      color: #222;
+    }
+
+    .card {
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-top: 30px;
+    }
+
+    input {
+      padding: 10px;
+      width: 100%;
+      max-width: 300px;
+      margin: 10px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 10px 18px;
+      border: none;
+      background: #0a58ca;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background: #084298;
+    }
+
+    ul {
+      line-height: 1.9;
+      padding-left: 20px;
+    }
+
+    a {
+      color: #0a58ca;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .note {
+      color: #555;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      color: #777;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <h1>📘 JAM Notes for Juniors</h1>
+
+    <!-- Login Card -->
+    <div class="card" id="loginCard">
+      <h2>🔐 Private Access</h2>
+      <p>Enter the password shared by your senior:</p>
+      <input type="password" id="password" placeholder="Enter password" />
+      <br />
+      <button onclick="checkPassword()">Access Notes</button>
+      <p id="errorMsg" style="color:red;"></p>
+      <p class="note">Please don’t share this link publicly.</p>
+    </div>
+
+    <!-- Notes Card -->
+    <div class="card hidden" id="notesCard">
+      <h2>📚 Subject-wise JAM Notes</h2>
+      <ul>
+        <li>📘 Mathematical Methods – <a href="PASTE_YOUR_DRIVE_LINK_HERE" target="_blank">Open PDF</a></li>
+        <li>⚛️ Classical Mechanics – <a href="PASTE_YOUR_DRIVE_LINK_HERE" target="_blank">Open PDF</a></li>
+        <li>🌊 Waves & Optics – <a href="PASTE_YOUR_DRIVE_LINK_HERE" target="_blank">Open PDF</a></li>
+        <li>🧲 Electromagnetism – <a href="PASTE_YOUR_DRIVE_LINK_HERE" target="_blank">Open PDF</a></li>
+        <li>🔥 Thermodynamics & Stat Mech – <a href="PASTE_YOUR_DRIVE_LINK_HERE" target="_blank">Open PDF</a></li>
+        <li>🧪 Quantum Mechanics – <a href="PASTE_YOUR_DRIVE_LINK_HERE" target="_blank">Open PDF</a></li>
+      </ul>
+
+      <p class="note">
+        These notes are shared only for juniors. Please don’t redistribute without permission.
+      </p>
+    </div>
+
+    <footer>
+      Made with ❤️ for JAM juniors
+    </footer>
+
+  </div>
+
+  <script>
+    function checkPassword() {
+      const correctPassword = "jam2026"; // 🔁 CHANGE THIS PASSWORD
+      const entered = document.getElementById("password").value;
+
+      if (entered === correctPassword) {
+        document.getElementById("loginCard").classList.add("hidden");
+        document.getElementById("notesCard").classList.remove("hidden");
+      } else {
+        document.getElementById("errorMsg").innerText = "❌ Wrong password. Ask your senior for access.";
+      }
+    }
+  </script>
+
+</body>
+</html>
