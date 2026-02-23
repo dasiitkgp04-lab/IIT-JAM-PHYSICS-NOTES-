@@ -120,7 +120,7 @@
     <div class="navbar" id="navbar">
       <a onclick="goSection('home')">🏠 Home</a>
       <a onclick="goSection('planner')">📅 Planner</a>
-      <a onclick="goSection('pyqs')">📑 Syllabus</a>
+      <a onclick="goSection('syllabus')">📑 Syllabus</a>
       <a onclick="goSection('formula')">📘 Formulas</a>
       <a onclick="goSection('links')">🔗 Links</a>
     </div>
@@ -140,12 +140,12 @@
     <div class="card hidden" id="notesCard">
       <h2>📚 Subject-wise JAM Notes</h2>
       <ul>
-        <li>⚛️ Classical Mechanics – <a href="Classical Mechanics.pdf" target="_blank">Open PDF</a></li>
+        <li>⚛️ Classical Mechanics – <a href="Classical_Mechanics.pdf" target="_blank">Open PDF</a></li>
         <li>🌊 Waves & Optics – <a href="Wave.pdf" target="_blank">Open PDF</a></li>
         <li>🧲 Electromagnetism – <a href="Electrodynamics.pdf" target="_blank">Open PDF</a></li>
-        <li>🔥 Thermodynamics – <a href="Thermodynamics .pdf" target="_blank">Open PDF</a></li>
-        <li>🧪 Quantum Mechanics – <a href="Quantum Mechanics.pdf" target="_blank">Open PDF</a></li>
-        <li>⚡ Electronics – <a href="Devices & Electronics.pdf" target="_blank">Open PDF</a></li>
+        <li>🔥 Thermodynamics – <a href="Thermodynamics.pdf" target="_blank">Open PDF</a></li>
+        <li>🧪 Quantum Mechanics – <a href="Quantum_Mechanics.pdf" target="_blank">Open PDF</a></li>
+        <li>⚡ Electronics – <a href="Devices_&_Electronics.pdf" target="_blank">Open PDF</a></li>
       </ul>
 
       <p class="note">
@@ -153,14 +153,14 @@
       </p>
 
       <!-- 📑 Syllabus PDFs -->
-      <div class="card">
+      <div class="card" id="syllabus">
         <h2>📑 Exam Syllabus (PDF)</h2>
         <ul>
           <li>🎯 IIT-JAM Physics Syllabus – 
-            <a href="JAM Syllabus.pdf" target="_blank">Open PDF</a>
+            <a href="JAM_Syllabus.pdf" target="_blank">Open PDF</a>
           </li>
           <li>🎯 JEST Physics Syllabus – 
-            <a href="JEST Syllabus.pdf" target="_blank">Open PDF</a>
+            <a href="JEST_Syllabus.pdf" target="_blank">Open PDF</a>
           </li>
         </ul>
         <p class="note">
@@ -231,7 +231,11 @@
 
       if (section === "home") {
         document.getElementById("notesCard").scrollIntoView({ behavior: "smooth" });
-      } else {
+      } 
+      else if (section === "syllabus") {
+        document.getElementById("syllabus").scrollIntoView({ behavior: "smooth" });
+      } 
+      else {
         window.location.href = section + ".html";
       }
     }
