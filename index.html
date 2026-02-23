@@ -23,6 +23,28 @@
       color: #222;
     }
 
+    /* 🔹 Top Navigation Bar */
+    .navbar {
+      background: #ffffff;
+      padding: 12px 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 20px 0 10px 0;
+    }
+
+    .navbar a {
+      font-weight: bold;
+      color: #0a58ca;
+    }
+
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+
     .card {
       background: #ffffff;
       padding: 25px;
@@ -85,13 +107,6 @@
       color: #777;
       font-size: 14px;
     }
-
-    /* 🔽 NAV BUTTON STYLE */
-    .nav-buttons {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 40px;
-    }
   </style>
 </head>
 <body>
@@ -99,6 +114,15 @@
   <div class="container">
 
     <h1>📘 JAM Notes for Juniors</h1>
+
+    <!-- 🔹 Navigation Bar -->
+    <div class="navbar">
+      <a href="index.html">🏠 Home</a>
+      <a href="planner.html">📅 Planner</a>
+      <a href="pyqs.html">📝 PYQs</a>
+      <a href="formula.html">📘 Formula</a>
+      <a href="links.html">🔗 Links</a>
+    </div>
 
     <!-- Login Card -->
     <div class="card" id="loginCard">
@@ -159,12 +183,6 @@
       </p>
     </div>
 
-    <!-- 🔽 NAVIGATION BUTTONS -->
-    <div class="nav-buttons">
-      <button onclick="goPrev()">⬅ Previous</button>
-      <button onclick="goNext()">Next ➡</button>
-    </div>
-
     <footer>
       © 2026 Dipam — Shared for juniors only.
     </footer>
@@ -181,30 +199,6 @@
         document.getElementById("notesCard").classList.remove("hidden");
       } else {
         document.getElementById("errorMsg").innerText = "❌ Wrong password. Ask Dipam for access.";
-      }
-    }
-
-    // 🔽 NAVIGATION LOGIC
-    const pages = [
-      "index.html",
-      "classical.html",
-      "quantum.html",
-      "solidstate.html",
-      "statmech.html"
-    ];
-
-    const currentPage = window.location.pathname.split("/").pop();
-    const currentIndex = pages.indexOf(currentPage);
-
-    function goPrev() {
-      if (currentIndex > 0) {
-        window.location.href = pages[currentIndex - 1];
-      }
-    }
-
-    function goNext() {
-      if (currentIndex < pages.length - 1) {
-        window.location.href = pages[currentIndex + 1];
       }
     }
   </script>
