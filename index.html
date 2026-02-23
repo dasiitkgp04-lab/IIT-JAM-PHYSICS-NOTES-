@@ -29,7 +29,7 @@
       padding: 12px 20px;
       border-radius: 10px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-      display: flex;
+      display: none; /* hidden before login */
       gap: 20px;
       justify-content: center;
       flex-wrap: wrap;
@@ -39,6 +39,7 @@
     .navbar a {
       font-weight: bold;
       color: #0a58ca;
+      cursor: pointer;
     }
 
     .navbar a:hover {
@@ -115,13 +116,13 @@
 
     <h1>📘 JAM Notes for Juniors</h1>
 
-    <!-- 🔹 Navigation Bar -->
-    <div class="navbar">
-      <a href="index.html">🏠 Home</a>
-      <a href="planner.html">📅 Planner</a>
-      <a href="pyqs.html">📝 PYQs</a>
-      <a href="formula.html">📘 Formula</a>
-      <a href="links.html">🔗 Links</a>
+    <!-- 🔹 Navigation Bar (Hidden before login) -->
+    <div class="navbar" id="navbar">
+      <a onclick="goSection('home')">🏠 Home</a>
+      <a onclick="goSection('planner')">📅 Planner</a>
+      <a onclick="goSection('pyqs')">📝 PYQs</a>
+      <a onclick="goSection('formula')">📘 Formula</a>
+      <a onclick="goSection('links')">🔗 Links</a>
     </div>
 
     <!-- Login Card -->
@@ -142,7 +143,7 @@
         <li>⚛️ Classical Mechanics – <a href="Classical Mechanics.pdf" target="_blank">Open PDF</a></li>
         <li>🌊 Waves & Optics – <a href="Wave.pdf" target="_blank">Open PDF</a></li>
         <li>🧲 Electromagnetism – <a href="Electrodynamics.pdf" target="_blank">Open PDF</a></li>
-        <li>🔥 Thermodynamics & Statistical Mechanics – <a href="Thermodynamics .pdf" target="_blank">Open PDF</a></li>
+        <li>🔥 Thermodynamics  – <a href="Thermodynamics .pdf" target="_blank">Open PDF</a></li>
         <li>🧪 Quantum Mechanics – <a href="Quantum Mechanics.pdf" target="_blank">Open PDF</a></li>
         <li>⚡ Electronics – <a href="Devices & Electronics.pdf" target="_blank">Open PDF</a></li>
       </ul>
@@ -190,15 +191,33 @@
   </div>
 
   <script>
+    let isLoggedIn = false;
+
     function checkPassword() {
       const correctPassword = "Physics@Dipam";
       const entered = document.getElementById("password").value;
 
       if (entered === correctPassword) {
+        isLoggedIn = true;
         document.getElementById("loginCard").classList.add("hidden");
         document.getElementById("notesCard").classList.remove("hidden");
+        document.getElementById("navbar").style.display = "flex";
       } else {
         document.getElementById("errorMsg").innerText = "❌ Wrong password. Ask Dipam for access.";
+      }
+    }
+
+    function goSection(section) {
+      if (!isLoggedIn) {
+        alert("Please login to access this section.");
+        return;
+      }
+
+      if (section === "home") {
+        document.getElementById("notesCard").scrollIntoView({ behavior: "smooth" });
+      } else {
+        // Redirect to other pages (you will create these)
+        window.location.href = section + ".html";
       }
     }
   </script>
