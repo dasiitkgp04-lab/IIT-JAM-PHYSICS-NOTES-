@@ -85,6 +85,13 @@
       color: #777;
       font-size: 14px;
     }
+
+    /* 🔽 NAV BUTTON STYLE */
+    .nav-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 40px;
+    }
   </style>
 </head>
 <body>
@@ -120,7 +127,7 @@
         These notes are shared only for juniors. Please don’t redistribute without permission.
       </p>
 
-      <!-- Advice Card (inside login) -->
+      <!-- Advice Card -->
       <div class="card">
         <h2>🧭 Advice for JAM Aspirants</h2>
         <ul>
@@ -137,7 +144,7 @@
       </div>
     </div>
 
-    <!-- Contact Card (Email only) -->
+    <!-- Contact Card -->
     <div class="card">
       <h2>📧 Contact</h2>
       <p>
@@ -150,6 +157,12 @@
       <p class="note">
         Please mention the subject/topic in your mail for a faster response.
       </p>
+    </div>
+
+    <!-- 🔽 NAVIGATION BUTTONS -->
+    <div class="nav-buttons">
+      <button onclick="goPrev()">⬅ Previous</button>
+      <button onclick="goNext()">Next ➡</button>
     </div>
 
     <footer>
@@ -168,6 +181,30 @@
         document.getElementById("notesCard").classList.remove("hidden");
       } else {
         document.getElementById("errorMsg").innerText = "❌ Wrong password. Ask Dipam for access.";
+      }
+    }
+
+    // 🔽 NAVIGATION LOGIC
+    const pages = [
+      "index.html",
+      "classical.html",
+      "quantum.html",
+      "solidstate.html",
+      "statmech.html"
+    ];
+
+    const currentPage = window.location.pathname.split("/").pop();
+    const currentIndex = pages.indexOf(currentPage);
+
+    function goPrev() {
+      if (currentIndex > 0) {
+        window.location.href = pages[currentIndex - 1];
+      }
+    }
+
+    function goNext() {
+      if (currentIndex < pages.length - 1) {
+        window.location.href = pages[currentIndex + 1];
       }
     }
   </script>
