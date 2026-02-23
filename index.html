@@ -285,14 +285,17 @@
       }
 
       // Always show notes container
-      document.getElementById("notesCard").classList.remove("hidden");
-
+      //document.getElementById("notesCard").classList.remove("hidden");
+      const notesCard = document.getElementById("notesCard");
       const books = document.getElementById("books");
       const syllabus = document.getElementById("syllabus");
+      const planner = document.getElementById("planner");
 
       // Hide both by default
       if (books) books.classList.add("hidden");
       if (syllabus) syllabus.classList.add("hidden");
+      if (planner) planner.classList.add("hidden");
+
 
       if (section === "home") {
         document.getElementById("notesCard").scrollIntoView({ behavior: "smooth" });
@@ -304,6 +307,10 @@
       else if (section === "books") {
         books.classList.remove("hidden");      // show books
         books.scrollIntoView({ behavior: "smooth" });
+      }
+      else if (section === "planner") {
+        planner.classList.remove("hidden");
+        planner.scrollIntoView({ behavior: "smooth" });
       }
     }
   </script>
