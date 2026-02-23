@@ -151,8 +151,8 @@
         These notes are shared only for juniors. Please don’t redistribute without permission.
       </p>
 
-      <!-- 📑 Syllabus PDFs -->
-      <div class="card" id="syllabus">
+      <!-- 📑 Syllabus PDFs (hidden by default) -->
+      <div class="card hidden" id="syllabus">
         <h2>📑 Exam Syllabus (PDF)</h2>
         <ul>
           <li>🎯 IIT-JAM Physics Syllabus – 
@@ -167,7 +167,7 @@
         </p>
       </div>
 
-      <!-- 📚 Reference Books -->
+      <!-- 📚 Reference Books (hidden by default) -->
       <div class="card hidden" id="books">
         <h2>📚 Reference Books for IIT JAM (Physics)</h2>
         <ul>
@@ -177,7 +177,7 @@
           <li><strong>Electricity & Magnetism:</strong> Griffiths; B. Ghosh</li>
           <li><strong>Waves & Optics:</strong> Ajoy Ghatak; N K Bajaj</li>
           <li><strong>Thermodynamics & Stat Mech:</strong> Garg Bansal Ghosh; Pathria</li>
-          <li><strong>Solid State Physics:</strong> Puri & Babbar </li>
+          <li><strong>Solid State Physics:</strong> Puri & Babbar</li>
         </ul>
         <p class="note">
           📌 One main book per subject + PYQs is enough for IIT JAM.
@@ -242,18 +242,22 @@
       // Always show notes container
       document.getElementById("notesCard").classList.remove("hidden");
 
-      // Hide Books by default
       const books = document.getElementById("books");
+      const syllabus = document.getElementById("syllabus");
+
+      // Hide both by default
       if (books) books.classList.add("hidden");
+      if (syllabus) syllabus.classList.add("hidden");
 
       if (section === "home") {
         document.getElementById("notesCard").scrollIntoView({ behavior: "smooth" });
       } 
       else if (section === "syllabus") {
-        document.getElementById("syllabus").scrollIntoView({ behavior: "smooth" });
+        syllabus.classList.remove("hidden");   // show syllabus
+        syllabus.scrollIntoView({ behavior: "smooth" });
       }
       else if (section === "books") {
-        books.classList.remove("hidden");      // 👈 SHOW BOOKS
+        books.classList.remove("hidden");      // show books
         books.scrollIntoView({ behavior: "smooth" });
       }
     }
