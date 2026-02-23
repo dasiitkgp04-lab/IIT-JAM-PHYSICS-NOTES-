@@ -120,7 +120,7 @@
     <div class="navbar" id="navbar">
       <a onclick="goSection('home')">🏠 Home</a>
       <a onclick="goSection('planner')">📅 Planner</a>
-      <a onclick="goSection('pyqs')">📝 Syllabus</a>
+      <a onclick="goSection('pyqs')">📑 Syllabus</a>
       <a onclick="goSection('formula')">📘 Formulas</a>
       <a onclick="goSection('links')">🔗 Links</a>
     </div>
@@ -143,7 +143,7 @@
         <li>⚛️ Classical Mechanics – <a href="Classical Mechanics.pdf" target="_blank">Open PDF</a></li>
         <li>🌊 Waves & Optics – <a href="Wave.pdf" target="_blank">Open PDF</a></li>
         <li>🧲 Electromagnetism – <a href="Electrodynamics.pdf" target="_blank">Open PDF</a></li>
-        <li>🔥 Thermodynamics  – <a href="Thermodynamics .pdf" target="_blank">Open PDF</a></li>
+        <li>🔥 Thermodynamics – <a href="Thermodynamics .pdf" target="_blank">Open PDF</a></li>
         <li>🧪 Quantum Mechanics – <a href="Quantum Mechanics.pdf" target="_blank">Open PDF</a></li>
         <li>⚡ Electronics – <a href="Devices & Electronics.pdf" target="_blank">Open PDF</a></li>
       </ul>
@@ -151,6 +151,22 @@
       <p class="note">
         These notes are shared only for juniors. Please don’t redistribute without permission.
       </p>
+
+      <!-- 📑 Syllabus PDFs -->
+      <div class="card">
+        <h2>📑 Exam Syllabus (PDF)</h2>
+        <ul>
+          <li>🎯 IIT-JAM Physics Syllabus – 
+            <a href="JAM Syllabus.pdf" target="_blank">Open PDF</a>
+          </li>
+          <li>🎯 JEST Physics Syllabus – 
+            <a href="JEST Syllabus.pdf" target="_blank">Open PDF</a>
+          </li>
+        </ul>
+        <p class="note">
+          📌 Always check the latest official brochure if a new syllabus version is released.
+        </p>
+      </div>
 
       <!-- Advice Card -->
       <div class="card">
@@ -216,7 +232,6 @@
       if (section === "home") {
         document.getElementById("notesCard").scrollIntoView({ behavior: "smooth" });
       } else {
-        // Redirect to other pages (you will create these)
         window.location.href = section + ".html";
       }
     }
