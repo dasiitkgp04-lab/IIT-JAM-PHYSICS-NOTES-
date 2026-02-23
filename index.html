@@ -23,13 +23,12 @@
       color: #222;
     }
 
-    /* 🔹 Top Navigation Bar */
     .navbar {
       background: #ffffff;
       padding: 12px 20px;
       border-radius: 10px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-      display: none; /* hidden before login */
+      display: none;
       gap: 20px;
       justify-content: center;
       flex-wrap: wrap;
@@ -116,13 +115,12 @@
 
     <h1>📘 JAM Notes for Juniors</h1>
 
-    <!-- 🔹 Navigation Bar (Hidden before login) -->
+    <!-- 🔹 Navigation Bar -->
     <div class="navbar" id="navbar">
       <a onclick="goSection('home')">🏠 Home</a>
-      <a onclick="goSection('planner')">📅 Planner</a>
       <a onclick="goSection('syllabus')">📑 Syllabus</a>
       <a onclick="goSection('formula')">📋 Formulas</a>
-      <a onclick="goSection('Books')"> 📚 Books</a>
+      <a onclick="goSection('books')">📚 Books</a>
     </div>
 
     <!-- Login Card -->
@@ -151,93 +149,56 @@
       <p class="note">
         These notes are shared only for juniors. Please don’t redistribute without permission.
       </p>
-
-      <!-- 📑 Syllabus PDFs -->
-      <div class="card" id="syllabus">
-        <h2>📑 Exam Syllabus (PDF)</h2>
-        <ul>
-          <li>🎯 IIT-JAM Physics Syllabus – 
-            <a href="JAM Syllabus.pdf" target="_blank">Open PDF</a>
-          </li>
-          <li>🎯 JEST Physics Syllabus – 
-            <a href="JEST Syllabus.pdf" target="_blank">Open PDF</a>
-          </li>
-        </ul>
-        <p class="note">
-          📌 Always check the latest official brochure if a new syllabus version is released.
-        </p>
-      </div>
-
-<!-- Reference Books Card -->
-<div class="card hidden" id="books">
-  <h2>📚 Reference Books for IIT JAM (Physics)</h2>
-
-  <ul>
-    <li><strong>Mathematical Physics:</strong> Arfken & Weber; Kreyszig</li>
-    <li><strong>Classical Mechanics:</strong> Goldstein; Rana & Joag</li>
-    <li><strong>Quantum Mechanics:</strong> Griffiths; Zettili</li>
-    <li><strong>Electricity & Magnetism:</strong> Griffiths; Purcell & Morin</li>
-    <li><strong>Waves & Optics:</strong> Ajoy Ghatak; Jenkins & White</li>
-    <li><strong>Thermodynamics & Stat Mech:</strong> Pathria; Kittel & Kroemer</li>
-    <li><strong>Solid State Physics:</strong> Kittel; Ashcroft & Mermin</li>
-  </ul>
-
-  <p class="note">
-    📌 One main book per subject + PYQs is enough for IIT JAM.  
-    Don’t hoard books—study smart.
-  </p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      
-      <!-- Advice Card -->
-      <div class="card">
-        <h2>🧭 Advice for JAM Aspirants</h2>
-        <ul>
-          <li>📅 Make a realistic study schedule and follow it consistently.</li>
-          <li>📘 Build concepts first, then practice PYQs seriously.</li>
-          <li>🧠 Revise weekly — short, frequent revisions work best.</li>
-          <li>📝 Maintain a formula sheet and update it regularly.</li>
-          <li>⏱️ Take mock tests and analyze your mistakes honestly.</li>
-          <li>💤 Take care of your health — consistency beats overwork.</li>
-        </ul>
-        <p class="note">
-          From Dipam: Stay patient, trust the process, and don’t compare your journey with others.
-        </p>
-      </div>
     </div>
 
-    <!-- Contact Card -->
+    <!-- 📑 Syllabus Section -->
+    <div class="card hidden" id="syllabus">
+      <h2>📑 Exam Syllabus (PDF)</h2>
+      <ul>
+        <li>🎯 IIT-JAM Physics Syllabus – <a href="JAM Syllabus.pdf" target="_blank">Open PDF</a></li>
+        <li>🎯 JEST Physics Syllabus – <a href="JEST Syllabus.pdf" target="_blank">Open PDF</a></li>
+      </ul>
+      <p class="note">📌 Always check the latest official brochure.</p>
+    </div>
+
+    <!-- 📚 Reference Books -->
+    <div class="card hidden" id="books">
+      <h2>📚 Reference Books for IIT JAM (Physics)</h2>
+      <ul>
+        <li><strong>Mathematical Physics:</strong> Arfken & Weber; Kreyszig</li>
+        <li><strong>Classical Mechanics:</strong> Goldstein; Rana & Joag</li>
+        <li><strong>Quantum Mechanics:</strong> Griffiths; Zettili</li>
+        <li><strong>Electricity & Magnetism:</strong> Griffiths; Purcell & Morin</li>
+        <li><strong>Waves & Optics:</strong> Ajoy Ghatak; Jenkins & White</li>
+        <li><strong>Thermodynamics & Stat Mech:</strong> Pathria; Kittel & Kroemer</li>
+        <li><strong>Solid State Physics:</strong> Kittel; Ashcroft & Mermin</li>
+      </ul>
+      <p class="note">📌 One main book per subject + PYQs is enough.</p>
+    </div>
+
+    <!-- Advice Card -->
+    <div class="card">
+      <h2>🧭 Advice for JAM Aspirants</h2>
+      <ul>
+        <li>📅 Make a realistic study schedule.</li>
+        <li>📘 Build concepts first, then PYQs.</li>
+        <li>🧠 Revise weekly.</li>
+        <li>📝 Maintain a formula sheet.</li>
+        <li>⏱️ Take mocks and analyze.</li>
+        <li>💤 Take care of health.</li>
+      </ul>
+      <p class="note">From Dipam: Stay patient and trust the process.</p>
+    </div>
+
+    <!-- Contact -->
     <div class="card">
       <h2>📧 Contact</h2>
       <p>
-        For any queries, missing notes, or corrections, feel free to email me at:
-        <br />
-        <strong>
-          <a href="mailto:dasdipam063@gmail.com">dasdipam063@gmail.com</a>
-        </strong>
+        <a href="mailto:dasdipam063@gmail.com">dasdipam063@gmail.com</a>
       </p>
-      <p class="note">
-        Please mention the subject/topic in your mail for a faster response.
-      </p>
+      <p class="note">Mention subject/topic for faster response.</p>
     </div>
 
-   
-
-    
     <footer>
       © 2026 Dipam — Shared for juniors only.
     </footer>
@@ -272,9 +233,9 @@
       } 
       else if (section === "syllabus") {
         document.getElementById("syllabus").scrollIntoView({ behavior: "smooth" });
-      } 
-      else {
-        window.location.href = section + ".html";
+      }
+      else if (section === "books") {
+        document.getElementById("books").scrollIntoView({ behavior: "smooth" });
       }
     }
   </script>
