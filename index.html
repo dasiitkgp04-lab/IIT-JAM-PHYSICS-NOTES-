@@ -53,52 +53,8 @@
       margin-top: 30px;
     }
 
-    input {
-      padding: 10px;
-      width: 100%;
-      max-width: 300px;
-      margin: 10px 0;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      font-size: 16px;
-    }
-
-    button {
-      padding: 10px 18px;
-      border: none;
-      background: #0a58ca;
-      color: white;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 16px;
-    }
-
-    button:hover {
-      background: #084298;
-    }
-
-    ul {
-      line-height: 1.9;
-      padding-left: 20px;
-    }
-
-    a {
-      color: #0a58ca;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
     .hidden {
       display: none;
-    }
-
-    .note {
-      color: #555;
-      font-size: 14px;
-      margin-top: 10px;
     }
 
     footer {
@@ -111,187 +67,97 @@
 </head>
 <body>
 
-  <div class="container">
+<div class="container">
+  <h1>📘 JAM Notes for Juniors</h1>
 
-    <h1>📘 JAM Notes for Juniors</h1>
-
- <!-- 🔹 Navigation Bar -->
-<div class="navbar" id="navbar">
-  <a onclick="goSection('home')">🏠 Home</a>
-  <a onclick="goSection('notes')">📅 Notes</a>
-  <a onclick="goSection('syllabus')">📑 Syllabus</a>
-  <a onclick="goSection('pyqs')">📋 PYQ's</a>
-  <a onclick="goSection('books')">📚 Books</a>
-</div>
-
-<!-- Login Card -->
-<div class="card" id="loginCard">
-  <h2>🔐 Private Access</h2>
-  <p>Enter the password shared by your senior:</p>
-  <input type="password" id="password" placeholder="Enter password" />
-  <br />
-  <button onclick="checkPassword()">Access Notes</button>
-  <p id="errorMsg" style="color:red;"></p>
-  <p class="note">Please don’t share this link publicly.</p>
-</div>
-
-<!-- Notes Card -->
-<div class="card hidden" id="notesCard">
-  <h2>📚 Subject-wise JAM Notes</h2>
-  <ul>
-    <li>⚛️ Classical Mechanics – <a href="Classical Mechanics.pdf" target="_blank">Open PDF</a></li>
-    <li>🌊 Waves & Optics – <a href="Wave.pdf" target="_blank">Open PDF</a></li>
-    <li>🧲 Electromagnetism – <a href="Electrodynamics.pdf" target="_blank">Open PDF</a></li>
-    <li>🔥 Thermodynamics – <a href="Thermo.pdf" target="_blank">Open PDF</a></li>
-    <li>🧪 Quantum Mechanics – <a href="Quantum Mechanics.pdf" target="_blank">Open PDF</a></li>
-    <li>⚡ Electronics – <a href="Devices & Electronics.pdf" target="_blank">Open PDF</a></li>
-  </ul>
-
-  <p class="note">
-    These notes are shared only for juniors. Please don’t redistribute without permission.
-  </p>
-</div>
-
-<!-- PYQs Card (separate section, NOT inside notesCard) -->
-<div class="card hidden" id="pyqs">
-  <h2>Previous Year Questions (PYQs)</h2>
-  <p>Download exam-wise PYQs in PDF format:</p>
-
-  <a class="pyq-link" href="JAM_PYQ.pdf" target="_blank">
-    📘 JAM PYQs (Physics) — open PDF
-  </a><br>
-
-  <a class="pyq-link" href="JEST_PYQ.PDF" target="_blank">
-    📙 JEST PYQs (Physics) — open PDF
-  </a>
-</div>
-      <!-- 📑 Syllabus PDFs (hidden by default) -->
-      <div class="card hidden" id="syllabus">
-        <h2>📑 Exam Syllabus (PDF)</h2>
-        <ul>
-          <li>🎯 IIT-JAM Physics Syllabus – 
-            <a href="JAM Syllabus.pdf" target="_blank">Open PDF</a>
-          </li>
-          <li>🎯 JEST Physics Syllabus – 
-            <a href="JEST Syllabus.pdf" target="_blank">Open PDF</a>
-          </li>
-        </ul>
-        <p class="note">
-          📌 Always check the latest official brochure if a new syllabus version is released.
-        </p>
-      </div>
-       <
-      </ul>
-    </div>
-
-  </div>
-</div>
-      <!-- 📚 Reference Books (hidden by default) -->
-      <div class="card hidden" id="books">
-        <h2>📚 Reference Books for IIT JAM (Physics)</h2>
-        <ul>
-          <li><strong>Mathematical Physics:</strong> H K Dass ; Kreyszig</li>
-          <li><strong>Classical Mechanics:</strong> J.C. Upadhyaya ; Goldstein</li>
-          <li><strong>Quantum Mechanics:</strong> Griffiths ; Zettili</li>
-          <li><strong>Electricity & Magnetism:</strong> Griffiths ; B. Ghosh</li>
-          <li><strong>Waves & Optics:</strong> Ajoy Ghatak ; N K Bajaj</li>
-          <li><strong>Thermodynamics & Stat Mech:</strong> Garg Bansal Ghosh ; Pathria</li>
-          <li><strong>Solid State Physics:</strong> Puri & Babbar</li>
-        </ul>
-        <p class="note">
-          📌 One main book per subject + PYQs is enough for IIT JAM.
-        </p>
-      </div>
-
-      <!-- Advice Card -->
-      <div class="card">
-        <h2>🧭 Advice for JAM Aspirants</h2>
-        <ul>
-          <li>📅 Make a realistic study schedule.</li>
-          <li>📘 Build concepts first, then PYQs.</li>
-          <li>🧠 Revise weekly.</li>
-          <li>📝 Maintain a formula sheet.</li>
-          <li>⏱️ Take mocks and analyze.</li>
-          <li>💤 Take care of health.</li>
-        </ul>
-        <p class="note">From Dipam: Stay patient and trust the process.</p>
-      </div>
-    </div>
-
-    <!-- Contact -->
-    <div class="card">
-      <h2>📧 Contact</h2>
-      <p>
-        For any queries, missing notes, or corrections, feel free to email me at:
-        <br />
-        <strong><a href="mailto:dasdipam063@gmail.com">dasdipam063@gmail.com</a></strong>
-      </p>
-      <p class="note">Please mention the subject/topic in your mail for faster response.</p>
-    </div>
-
-    <footer>
-      © 2026 Dipam — Shared for juniors only.
-    </footer>
-
+  <!-- 🔹 Navigation Bar -->
+  <div class="navbar" id="navbar">
+    <a onclick="goSection('home')">🏠 Home</a>
+    <a onclick="goSection('notes')">📘 Notes</a>
+    <a onclick="goSection('syllabus')">📑 Syllabus</a>
+    <a onclick="goSection('pyqs')">📋 PYQ's</a>
+    <a onclick="goSection('books')">📚 Books</a>
   </div>
 
-  <script>
-    let isLoggedIn = false;
+  <!-- Login Card -->
+  <div class="card" id="loginCard">
+    <h2>🔐 Private Access</h2>
+    <input type="password" id="password" placeholder="Enter password" />
+    <br />
+    <button onclick="checkPassword()">Access</button>
+    <p id="errorMsg" style="color:red;"></p>
+  </div>
 
-    function checkPassword() {
-      const correctPassword = "Physics@Dipam";
-      const entered = document.getElementById("password").value;
+  <!-- Home (blank after login) -->
+  <div class="card hidden" id="homeCard">
+    <h2>Welcome 👋</h2>
+    <p>Select a section from the navigation bar.</p>
+  </div>
 
-      if (entered === correctPassword) {
-        isLoggedIn = true;
-        document.getElementById("loginCard").classList.add("hidden");
-        document.getElementById("notesCard").classList.remove("hidden");
-        document.getElementById("navbar").style.display = "flex";
-      } else {
-        document.getElementById("errorMsg").innerText = "❌ Wrong password. Ask Dipam for access.";
-      }
+  <!-- 📘 Notes -->
+  <div class="card hidden" id="notesCard">
+    <h2>📘 Class Notes</h2>
+    <ul>
+      <li>Classical Mechanics – <a href="Classical Mechanics.pdf" target="_blank">Open</a></li>
+      <li>Quantum Mechanics – <a href="Quantum Mechanics.pdf" target="_blank">Open</a></li>
+      <li>Electrodynamics – <a href="Electrodynamics.pdf" target="_blank">Open</a></li>
+    </ul>
+  </div>
+
+  <!-- 📑 Syllabus -->
+  <div class="card hidden" id="syllabus">
+    <h2>📑 Syllabus</h2>
+    <a href="JAM Syllabus.pdf" target="_blank">JAM Physics</a>
+  </div>
+
+  <!-- 📋 PYQs -->
+  <div class="card hidden" id="pyqs">
+    <h2>📋 PYQs</h2>
+    <a href="JAM_PYQ.pdf" target="_blank">Open JAM PYQs</a>
+  </div>
+
+  <!-- 📚 Books -->
+  <div class="card hidden" id="books">
+    <h2>📚 Books</h2>
+    <ul>
+      <li>Griffiths – EM</li>
+      <li>Pathria – Stat Mech</li>
+    </ul>
+  </div>
+
+  <footer>© 2026 Dipam — For juniors only</footer>
+</div>
+
+<script>
+  let isLoggedIn = false;
+
+  function checkPassword() {
+    if (document.getElementById("password").value === "Physics@Dipam") {
+      isLoggedIn = true;
+      document.getElementById("loginCard").classList.add("hidden");
+      document.getElementById("navbar").style.display = "flex";
+      goSection("home"); // show blank home
+    } else {
+      document.getElementById("errorMsg").innerText = "Wrong password";
+    }
+  }
+
+  function goSection(section) {
+    if (!isLoggedIn) {
+      alert("Please login first.");
+      return;
     }
 
-   <script>
-function goSection(section) {
-  if (!isLoggedIn) {
-    alert("Please login to access this section.");
-    return;
-  }
+    const sections = ["homeCard", "notesCard", "syllabus", "pyqs", "books"];
+    sections.forEach(id => document.getElementById(id).classList.add("hidden"));
 
-  const notesCard = document.getElementById("notesCard");
-  const books = document.getElementById("books");
-  const syllabus = document.getElementById("syllabus");
-  const planner = document.getElementById("planner");
-  const pyqs = document.getElementById("pyqs");   // 👉 add this
-
-  // Always show notes container (your design choice)
-  if (notesCard) notesCard.classList.remove("hidden");
-
-  // Hide all sections by default
-  if (books) books.classList.add("hidden");
-  if (syllabus) syllabus.classList.add("hidden");
-  if (planner) planner.classList.add("hidden");
-  if (pyqs) pyqs.classList.add("hidden");        // 👉 hide PYQs by default
-
-  if (section === "home") {
-    notesCard.scrollIntoView({ behavior: "smooth" });
-  } 
-  else if (section === "syllabus") {
-    syllabus.classList.remove("hidden");
-    syllabus.scrollIntoView({ behavior: "smooth" });
+    if (section === "home") document.getElementById("homeCard").classList.remove("hidden");
+    if (section === "notes") document.getElementById("notesCard").classList.remove("hidden");
+    if (section === "syllabus") document.getElementById("syllabus").classList.remove("hidden");
+    if (section === "pyqs") document.getElementById("pyqs").classList.remove("hidden");
+    if (section === "books") document.getElementById("books").classList.remove("hidden");
   }
-  else if (section === "books") {
-    books.classList.remove("hidden");
-    books.scrollIntoView({ behavior: "smooth" });
-  }
-  else if (section === "planner") {
-    planner.classList.remove("hidden");
-    planner.scrollIntoView({ behavior: "smooth" });
-  }
-  else if (section === "pyqs") {                 // 👉 handle PYQs
-    pyqs.classList.remove("hidden");
-    pyqs.scrollIntoView({ behavior: "smooth" });
-  }
-}
 </script>
+
+</body>
+</html>
