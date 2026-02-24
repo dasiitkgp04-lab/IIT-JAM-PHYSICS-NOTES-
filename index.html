@@ -115,47 +115,45 @@
 
     <h1>📘 JAM Notes for Juniors</h1>
 
-    <!-- 🔹 Navigation Bar -->
-    <div class="navbar" id="navbar">
-      <a onclick="goSection('home')">🏠 Home</a>
-      <a onclick="goSection('planner')">📅 Planner</a>
-      <a onclick="goSection('syllabus')">📑 Syllabus</a>
-      <a onclick="goSection('pyqs')">📋 PYQ's</a>
-      <a onclick="goSection('books')">📚 Books</a>
-    </div>
+ <!-- 🔹 Navigation Bar -->
+<div class="navbar" id="navbar">
+  <a onclick="goSection('home')">🏠 Home</a>
+  <a onclick="goSection('planner')">📅 Planner</a>
+  <a onclick="goSection('syllabus')">📑 Syllabus</a>
+  <a onclick="goSection('pyqs')">📋 PYQ's</a>
+  <a onclick="goSection('books')">📚 Books</a>
+</div>
 
-    
-    <!-- Login Card -->
-     <div class="card" id="loginCard">
-      <h2>🔐 Private Access</h2>
-      <p>Enter the password shared by your senior:</p>
-      <input type="password" id="password" placeholder="Enter password" />
-      <br />
-      <button onclick="checkPassword()">Access Notes</button>
-      <p id="errorMsg" style="color:red;"></p>
-      <p class="note">Please don’t share this link publicly.</p>
-    </div>
+<!-- Login Card -->
+<div class="card" id="loginCard">
+  <h2>🔐 Private Access</h2>
+  <p>Enter the password shared by your senior:</p>
+  <input type="password" id="password" placeholder="Enter password" />
+  <br />
+  <button onclick="checkPassword()">Access Notes</button>
+  <p id="errorMsg" style="color:red;"></p>
+  <p class="note">Please don’t share this link publicly.</p>
+</div>
 
+<!-- Notes Card -->
+<div class="card hidden" id="notesCard">
+  <h2>📚 Subject-wise JAM Notes</h2>
+  <ul>
+    <li>⚛️ Classical Mechanics – <a href="Classical Mechanics.pdf" target="_blank">Open PDF</a></li>
+    <li>🌊 Waves & Optics – <a href="Wave.pdf" target="_blank">Open PDF</a></li>
+    <li>🧲 Electromagnetism – <a href="Electrodynamics.pdf" target="_blank">Open PDF</a></li>
+    <li>🔥 Thermodynamics – <a href="Thermo.pdf" target="_blank">Open PDF</a></li>
+    <li>🧪 Quantum Mechanics – <a href="Quantum Mechanics.pdf" target="_blank">Open PDF</a></li>
+    <li>⚡ Electronics – <a href="Devices & Electronics.pdf" target="_blank">Open PDF</a></li>
+  </ul>
 
+  <p class="note">
+    These notes are shared only for juniors. Please don’t redistribute without permission.
+  </p>
+</div>
 
-    
-    <!-- Notes Card -->
-    <div class="card hidden" id="notesCard">
-      <h2>📚 Subject-wise JAM Notes</h2>
-      <ul>
-        <li>⚛️ Classical Mechanics – <a href="Classical Mechanics.pdf" target="_blank">Open PDF</a></li>
-        <li>🌊 Waves & Optics – <a href="Wave.pdf" target="_blank">Open PDF</a></li>
-        <li>🧲 Electromagnetism – <a href="Electrodynamics.pdf" target="_blank">Open PDF</a></li>
-        <li>🔥 Thermodynamics – <a href="Thermo.pdf" target="_blank">Open PDF</a></li>
-        <li>🧪 Quantum Mechanics – <a href="Quantum Mechanics.pdf" target="_blank">Open PDF</a></li>
-        <li>⚡ Electronics – <a href="Devices & Electronics.pdf" target="_blank">Open PDF</a></li>
-      </ul>
-
-      <p class="note">
-        These notes are shared only for juniors. Please don’t redistribute without permission.
-      </p>
-      
-    <div class="card hidden" id="pyqs">
+<!-- PYQs Card (separate section, NOT inside notesCard) -->
+<div class="card hidden" id="pyqs">
   <h2>Previous Year Questions (PYQs)</h2>
   <p>Download exam-wise PYQs in PDF format:</p>
 
@@ -182,47 +180,7 @@
           📌 Always check the latest official brochure if a new syllabus version is released.
         </p>
       </div>
-       <!-- 📅 Planner Section (hidden by default) -->
-<div class="card" id="planner">
-  <h2>📅 Study Planner</h2>
-
-  <div class="planner-grid">
-
-    <div class="planner-card">
-      <h3>🗓️ Daily Planner</h3>
-      <ul>
-        <li>⏱️ 2–3 hrs Core Subject</li>
-        <li>📘 30 min Formula Revision</li>
-        <li>🧠 20 MCQs</li>
-        <li>✍️ 5 PYQs</li>
-      </ul>
-    </div>
-
-    <div class="planner-card">
-      <h3>📅 Weekly Planner</h3>
-      <ul>
-        <li>3 Days – New Concepts</li>
-        <li>2 Days – Numerical Practice</li>
-        <li>1 Day – PYQs</li>
-        <li>1 Day – Weak Topic Revision</li>
-      </ul>
-    </div>
-
-    <div class="planner-card">
-      <h3>📌 Year-wise Focus</h3>
-      <ul>
-        <li>1st Year – Math Physics + CM</li>
-        <li>2nd Year – QM + Thermodynamics</li>
-        <li>3rd Year – Solid State + Full Mocks</li>
-      </ul>
-    </div>
-
-    <div class="planner-card">
-      <h3>🎯 PYQ Strategy</h3>
-      <ul>
-        <li>Solve last 15 years PYQs</li>
-        <li>Maintain an error notebook</li>
-        <li>Re-attempt PYQs monthly</li>
+       <
       </ul>
     </div>
 
@@ -294,42 +252,46 @@
       }
     }
 
-    function goSection(section) {
-      if (!isLoggedIn) {
-        alert("Please login to access this section.");
-        return;
-      }
+   <script>
+function goSection(section) {
+  if (!isLoggedIn) {
+    alert("Please login to access this section.");
+    return;
+  }
 
-      // Always show notes container
-      //document.getElementById("notesCard").classList.remove("hidden");
-      const notesCard = document.getElementById("notesCard");
-      const books = document.getElementById("books");
-      const syllabus = document.getElementById("syllabus");
-      const planner = document.getElementById("planner");
-      notesCard.classList.remove("hidden");
-      // Hide both by default
-      if (books) books.classList.add("hidden");
-      if (syllabus) syllabus.classList.add("hidden");
-      if (planner) planner.classList.add("hidden");
+  const notesCard = document.getElementById("notesCard");
+  const books = document.getElementById("books");
+  const syllabus = document.getElementById("syllabus");
+  const planner = document.getElementById("planner");
+  const pyqs = document.getElementById("pyqs");   // 👉 add this
 
+  // Always show notes container (your design choice)
+  if (notesCard) notesCard.classList.remove("hidden");
 
-      if (section === "home") {
-        document.getElementById("notesCard").scrollIntoView({ behavior: "smooth" });
-      } 
-      else if (section === "syllabus") {
-        syllabus.classList.remove("hidden");   // show syllabus
-        syllabus.scrollIntoView({ behavior: "smooth" });
-      }
-      else if (section === "books") {
-        books.classList.remove("hidden");      // show books
-        books.scrollIntoView({ behavior: "smooth" });
-      }
-      else if (section === "planner") {
-        planner.classList.remove("hidden");
-        planner.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-  </script>
+  // Hide all sections by default
+  if (books) books.classList.add("hidden");
+  if (syllabus) syllabus.classList.add("hidden");
+  if (planner) planner.classList.add("hidden");
+  if (pyqs) pyqs.classList.add("hidden");        // 👉 hide PYQs by default
 
-</body>
-</html>
+  if (section === "home") {
+    notesCard.scrollIntoView({ behavior: "smooth" });
+  } 
+  else if (section === "syllabus") {
+    syllabus.classList.remove("hidden");
+    syllabus.scrollIntoView({ behavior: "smooth" });
+  }
+  else if (section === "books") {
+    books.classList.remove("hidden");
+    books.scrollIntoView({ behavior: "smooth" });
+  }
+  else if (section === "planner") {
+    planner.classList.remove("hidden");
+    planner.scrollIntoView({ behavior: "smooth" });
+  }
+  else if (section === "pyqs") {                 // 👉 handle PYQs
+    pyqs.classList.remove("hidden");
+    pyqs.scrollIntoView({ behavior: "smooth" });
+  }
+}
+</script>
