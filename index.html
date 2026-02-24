@@ -122,6 +122,7 @@
     <a onclick="goSection('syllabus')">📑 Syllabus</a>
     <a onclick="goSection('pyqs')">📋 PYQ's</a>
     <a onclick="goSection('books')">📚 Books</a>
+    <a onclick="goSection('about')">🙋 About Me</a>
   </div>
 
   <!-- Login Card -->
@@ -135,6 +136,29 @@
     <p class="note">Please don’t share this link publicly.</p>
   </div>
 
+<!-- 🙋 About Me Section -->
+<div class="card hidden" id="about">
+  <h2>🙋 About Me</h2>
+  <p>
+    Hi, I’m <strong>Dipam</strong> 👋. I’m a Physics student and I created this small website
+    to help my juniors with IIT-JAM / JEST Physics preparation by sharing my personal notes,
+    PYQs, and useful resources.
+  </p>
+  <p>
+    I’ve gone through the same preparation phase, so I know how confusing book choices and
+    resources can be at the beginning. My aim is to make things a little easier for you 🙂
+  </p>
+  <p>
+    If these notes help you even a bit, that makes me happy. Stay consistent, practice PYQs,
+    and trust the process 🚀
+  </p>
+  <p class="note">
+    📌 These are my personal study notes. Please cross-check important points with standard textbooks.
+  </p>
+</div>
+
+
+  
   <!-- Home (blank after login) -->
   <div class="card hidden" id="homeCard">
     <h2>Welcome 👋</h2>
@@ -232,7 +256,7 @@
       return;
     }
 
-    const sections = ["homeCard", "notesCard", "syllabus", "pyqs", "books"];
+    const sections = ["homeCard", "notesCard", "syllabus", "pyqs", "books", "about"];
     sections.forEach(id => document.getElementById(id).classList.add("hidden"));
 
     if (section === "home") document.getElementById("homeCard").classList.remove("hidden");
@@ -240,6 +264,7 @@
     if (section === "syllabus") document.getElementById("syllabus").classList.remove("hidden");
     if (section === "pyqs") document.getElementById("pyqs").classList.remove("hidden");
     if (section === "books") document.getElementById("books").classList.remove("hidden");
+    if (section === "about") document.getElementById("about")?.classList.remove("hidden");
   }
 </script>
 
